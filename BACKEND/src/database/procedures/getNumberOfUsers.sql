@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE getNumberOfUsers
+AS
+BEGIN
+    SELECT COUNT(*) AS numberOfUsers FROM Users;
+END

@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE getNumberOfEvents
+AS
+BEGIN
+    SELECT COUNT(*) AS numberOfEvents FROM Events;
+END

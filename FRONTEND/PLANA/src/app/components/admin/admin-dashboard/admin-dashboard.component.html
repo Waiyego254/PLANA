@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="navbar">
+    <div class="logo">
+      <h3>PLANA</h3>
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+    </div>
+
+    <div class="title">
+      <h3>ADMIN DASHBOARD</h3>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="header-text">
+      <h4>ANALYTICS</h4>
+    </div>
+
+    <div class="analysis">
+      <div class="card">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <p>{{ numberOfUsers }}</p>
+      </div>
+      <div class="card">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+        <p>{{ numberOfEvents }}</p>
+      </div>
+      <div class="card">
+        <h5>REVENUE</h5>
+        <p>KSH {{ totalRevenue }}</p>
+      </div>
+    </div>
+
+    <div class="charts">
+      <div class="chart-container">
+        <p-chart type="pie" [data]="userRolesData"></p-chart>
+      </div>
+  
+      <div class="chart-container">
+        <p-chart type="bar" [data]="eventChartData"></p-chart>
+      </div>
+  
+      <div class="chart-container">
+        <p-chart type="bar" [data]="revenueChartData"></p-chart>
+      </div>
+    </div>
+  </div>
+</div>

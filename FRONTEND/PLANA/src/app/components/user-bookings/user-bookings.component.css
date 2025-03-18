@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background: rgb(216, 216, 216);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container .navbar {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #36c2ce;
+  }
+  
+  .navbar .header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .navbar .header h3,
+  .navbar .header i {
+    color: white;
+    font-size: 30px;
+  }
+  
+  .navbar .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar .title h3 {
+    font-size: 30px;
+    color: white;
+  }
+  
+  .container .bottom {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .bottom .heading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .bottom .heading h4 {
+    font-size: 20px;
+    color: black;
+  }
+  
+  .bottom .event-container {
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(187, 187, 187);
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  thead {
+    background-color: #36c2ce;
+  }
+  
+  thead th {
+    color: white;
+    padding: 10px;
+  }
+  
+  tbody tr {
+    background-color: white;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  button[type="reset"] {
+    background-color: rgb(247, 70, 70);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button[type="reset"]:hover {
+    background-color: rgb(252, 17, 17);
+    color: black;
+  }
+  
+  .cancelBook{
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #42df71;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+  }

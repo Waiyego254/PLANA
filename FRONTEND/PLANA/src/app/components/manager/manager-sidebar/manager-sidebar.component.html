@@ -1,0 +1,61 @@
+<div class="sidebar" [class.active]="isActive">
+    <div class="logo_content">
+        <div class="logo">
+            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+            <div class="logo_name">PLANA</div>
+        </div>
+        <i class="fa fa-sliders" aria-hidden="true" (click)="toggleSidebar()"></i>
+    </div>
+    <div class="nav_list">
+        <ul>
+            <li>
+                <a routerLink="manager-home">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a routerLink="manager-events">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span class="links_name">Events</span>
+                </a>
+                <span class="tooltip">Events</span>
+            </li>
+            <li>
+                <a routerLink="/manager/manager-users">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <span class="links_name">Users</span>
+                </a>
+                <span class="tooltip">Users</span>
+            </li>
+            <li>
+                <a routerLink="/manager/manager-bookings">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    <span class="links_name">Bookings</span>
+                </a>
+                <span class="tooltip">Bookings</span>
+            </li>
+            <li>
+                <a routerLink="/manager/manager-profile">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span class="links_name">Profile</span>
+                </a>
+                <span class="tooltip">Profile</span>
+            </li>
+            <li>
+                <a (click)=" logout()" class="bottom">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    <span class="links_name">Log out</span>
+                </a>
+                <span class="tooltip">Log Out</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="home_content">
+    <div class="text">
+       
+    </div>
+
+</div>

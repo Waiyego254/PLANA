@@ -1,0 +1,142 @@
+.main{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(216, 216, 216);
+}
+
+.form{
+    width: 50%;
+    height: 60%;
+    display: flex;
+    border-radius: 10px;
+    background: white;
+}
+
+.form .left-side{
+    width: 45%;
+    height: 100%;
+}
+
+/* .form .left-side img{
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+} */
+
+.home{
+    cursor: pointer;
+    color: blue;
+}
+
+.form .left-side{
+    background: url(../asset/Man-holding-login-form-as-a-login-here-on-transparent-background-PNG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #4290df;
+}
+
+.form .right-side{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 5px; */
+}
+
+.right-side .login-text{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 10px;
+    background: #478CCF;
+}
+
+.right-side .login-text h3{
+    font-size: 35px;
+}
+
+.right-side .inputs{
+    width: 100%;
+    height: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    /* background: blue; */
+}
+
+.right-side .inputs input{
+    width: 90%;
+    height: 20%;
+    border: none;
+    border-radius: 10px;
+    background: rgb(219, 219, 219);
+    padding: 5px;
+}
+
+.right-side .btns{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.right-side .btns button{
+    width: 50%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background: #478CCF;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+
+.right-side .btns button:hover{
+    background: #77E4C8;
+    color: black;
+    transform: translateY(5%);
+    cursor: pointer;
+}
+
+.right-side .register{
+    text-decoration: none;
+}
+.right-side .register a{
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+  }
+
+  .success {
+    background-color: #478CCF;
+    color: white;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+  }

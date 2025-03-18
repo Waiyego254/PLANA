@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="container">
+    <div class="navbar">
+      <div class="header">
+        <h3>PLANA</h3>
+        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+      </div>
+      <div class="menu">
+        <p routerLink="/user-profile">Profile</p>
+        <p routerLink="/user-bookings">Bookings</p>
+        <p (click)="logout()">Logout</p>
+      </div>
+    </div>
+
+    <div class="search-username">
+      <div class="search-events">
+        <input type="text" placeholder="search for events">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+      <div class="welcome-user">
+        <p>Welcome {{ username }}</p>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div *ngIf="bookingMessage" class="login-message">{{ bookingMessage }}</div>
+      <div *ngIf="bookingError" class="error-message">{{ bookingError }}</div>
+      <div class="upcoming-events">
+        <h3>UPCOMING EVENTS</h3>
+        <div class="images-events">
+          <div class="image-description" *ngFor="let event of events">
+            <img [src]="event.image" alt="Event image">
+            <h4>{{ event.title }}</h4>
+            <p>{{ event.description }}</p>
+            <p>Ticket-type: {{ event.ticket_type }}</p>
+            <p>Date: {{ event.date | date }}</p>
+            <p>Price: Ksh {{ event.price }}</p>
+            <p>Available Tickets: {{event.available_tickets}}</p>
+            <button (click)="bookEvent(event.event_id)">Book Event</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

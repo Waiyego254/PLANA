@@ -1,0 +1,47 @@
+<!-- src/app/components/admin-view-users/admin-view-users.component.html -->
+<div class="container">
+  <div class="navbar">
+    <div class="logo">
+      <h3>PLANA</h3>
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+    </div>
+    <div class="title">
+      <h3>USERS DASHBOARD</h3>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="header-text">
+      <h4>USERS</h4>
+    </div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+
+    <div class="users-table">
+      <table>
+        <thead>
+          <tr>
+            <th>USERNAME</th>
+            <th>EMAIL</th>
+            <th>ROLE</th>
+            <th>STATUS</th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.role }}</td>
+            <td>{{ user.isActive ? 'Active' : 'Inactive' }}</td>
+            <td class="btns">
+              <button class="update-btn" (click)="activateUser(user.user_id)">Activate</button>
+              <button class="de-activate" (click)="deactivateUser(user.user_id)">Deactivate</button>
+              <button (click)="switchUserRole(user.user_id)" class="switchrole">Switch Role</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

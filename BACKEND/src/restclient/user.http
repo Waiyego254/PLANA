@@ -1,0 +1,68 @@
+  ###REGISTER USER
+POST http://localhost:5500/users/register
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "email": "waiyego@yopmail.com",
+    "password": "waiyego12345"
+}
+
+###LOGIN USER
+POST http://localhost:5500/users/login
+Content-Type: application/json
+
+{
+    "email": "admin@example.com",
+    "password": "tim"
+}
+
+
+
+###FETCH ALL USERS
+GET http://localhost:5500/users/fetch-all-users
+Content-Type: application/json
+
+
+###FETCH USERS(ROLE(USER))
+GET http://localhost:5500/users/fetch-users
+Content-Type: application/json
+
+
+### FETCH SINGLE USER
+GET http://localhost:5500/users/057edb15-8d99-48b9-a253-3c27edc88f01
+Content-Type: application/json
+
+
+###SWITCH ROLES
+PUT http://localhost:5500/users/switch-role
+Content-Type: application/json
+
+{
+    "user_id":"bc604da9-3c27-4a88-845a-37f0582113c5"
+}
+
+
+###CHANGE USER PASSWORD
+PUT http://localhost:5500/users/admin@example.com
+Content-Type: application/json
+
+{
+    "password": "12345678"
+}
+
+
+###DEACTIVATE USER
+PUT http://localhost:5500/users/deactivate/64f849bf-cfef-4f9b-9577-b2f894d8e77c
+
+###ACTIVATE USER
+PUT http://localhost:5500/users/activate/64f849bf-cfef-4f9b-9577-b2f894d8e77c
+
+
+###GET THE NUMBER OF USERS
+GET http://localhost:5500/users/user/countUsers
+Content-Type: application/json
+
+###GET NUMBER OF USERS IN ROLES
+GET http://localhost:5500/users/user/countUserRole
+Content-Type: application/json

@@ -1,0 +1,38 @@
+<!-- src/app/components/admin-events/admin-events.component.html -->
+<div class="container">
+  <div class="navbar">
+    <div class="logo">
+      <h3>PLANA</h3>
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+    </div>
+    <div class="title">
+      <h3>EVENTS DASHBOARD</h3>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="events-text">
+      <h4>Events</h4>
+    </div>
+
+    <table>
+      <tr>
+        <th>Event</th>
+        <th>Status</th>
+        <th>Available Tickets</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let event of events">
+        <td>{{ event.title }}</td>
+        <td [ngClass]="{ 'pending': !event.isApproved, 'approved': event.isApproved }">
+          {{ event.isApproved ? 'Approved' : 'Pending' }}
+        </td>
+        <td>{{event.available_tickets}}</td>
+        <td class="btns">
+          <button class="update" (click)="approveEvent(event.event_id)">Approve</button>
+          <button class="delete" (click)="deleteEvent(event.event_id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

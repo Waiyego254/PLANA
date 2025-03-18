@@ -1,0 +1,69 @@
+<!-- src/app/components/admin-profile/admin-profile.component.html -->
+<div class="container">
+  <div class="navbar">
+    <div class="logo">
+      <h3>PLANA</h3>
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+    </div>
+    <div class="title">
+      <h3>ADMIN DASHBOARD</h3>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="header-text">
+      <h4>PROFILE</h4>
+    </div>
+
+    <div class="profile">
+      <h4>UPDATE YOUR PROFILE</h4>
+      
+      <form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)">
+        <input 
+          type="email" 
+          name="email" 
+          ngModel 
+          #email="ngModel" 
+          required 
+          email 
+          placeholder="Your email"
+        />
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+          <div *ngIf="email.errors?.['required']">
+            Email is required.
+          </div>
+          <div *ngIf="email.errors?.['email']">
+            Enter a valid email.
+          </div>
+        </div>
+
+        <input 
+          type="password" 
+          name="password" 
+          ngModel 
+          #password="ngModel" 
+          required 
+          minlength="6" 
+          placeholder="Your password"
+        />
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+          <div *ngIf="password.errors?.['required']">
+            Password is required.
+          </div>
+          <div *ngIf="password.errors?.['minlength']">
+            Password must be at least 6 characters long.
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="profileForm.invalid">Submit</button>
+      </form>
+
+      <div *ngIf="successMessage" class="success">
+        {{ successMessage }}
+      </div>
+      <div *ngIf="errorMessage" class="error">
+        {{ errorMessage }}
+      </div>
+    </div>
+  </div>
+</div>

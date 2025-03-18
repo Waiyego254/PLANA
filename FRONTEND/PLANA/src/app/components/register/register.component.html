@@ -1,0 +1,74 @@
+<div class="main">
+  <div class="container">
+    <div *ngIf="registerSuccess" class="success">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="error" class="error">
+      {{ error }}
+    </div>
+    <div class="form">
+      <div class="left-side">
+        <!--<img src="https://www.infolinkbd.com/assets_auth/images/user/signup.svg" alt="">-->
+        <p class="home" routerLink="">Home</p>
+      </div>
+
+      <div class="right-side">
+        <div class="register-text">
+          <h3>REGISTER</h3>
+        </div>
+
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+          <div class="inputs">
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              [(ngModel)]="user.username"
+              required
+              #username="ngModel"
+            />
+            <div *ngIf="showErrorMessages && username.invalid && username.touched" class="error">
+              Username is required.
+            </div>
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              [(ngModel)]="user.email"
+              required
+              email
+              #email="ngModel"
+            />
+            <div *ngIf="showErrorMessages && email.invalid && email.touched" class="error">
+              <div *ngIf="email.errors?.['required']">Email is required.</div>
+              <div *ngIf="email.errors?.['email']">Invalid email address.</div>
+            </div>
+
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              [(ngModel)]="user.password"
+              required
+              minlength="6"
+              #password="ngModel"
+            />
+            <div *ngIf="showErrorMessages && password.invalid && password.touched" class="error">
+              <div *ngIf="password.errors?.['required']">Password is required.</div>
+              <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long.</div>
+            </div>
+          </div>
+
+          <div class="btns">
+            <button [disabled]="registerForm.invalid">Register</button>
+          </div>
+        </form>
+
+        <div class="registered">
+          <p>Already have an account? <a routerLink="/login">Log in</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,147 @@
+.sidebar {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    background-color: #36C2CE;
+    padding: 6px 14px;
+    transition: width 0.5s ease;
+  }
+  
+  .sidebar.active {
+    width: 150px;
+  }
+  
+  .sidebar .logo_content .logo {
+    margin-top: 10px;
+    display: flex;
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .sidebar.active .logo_content .logo {
+    opacity: 1;
+    pointer-events: none;
+  }
+  
+  .logo_content .logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+  
+  .logo_content .logo .logo_name {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .sidebar #btn {
+    position: absolute;
+    color: #fff;
+    left: 50%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+  
+  .sidebar.active #btn {
+    left: 90%;
+  }
+  
+  .sidebar ul {
+    margin-top: 20px;
+  }
+  
+  .sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+  }
+  
+  .sidebar ul li .tooltip {
+    position: absolute;
+    left: 100px;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 90px;
+    background: #fff;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+    z-index: 1000;
+  }
+  
+  .sidebar.active ul li .tooltip {
+    display: none;
+  }
+  
+  .sidebar ul li:hover .tooltip {
+    transition: all 0.5s ease;
+    z-index: 1000;
+    opacity: 1;
+    top: 50%;
+  }
+  
+  .sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 12px;
+    transition: all 0.5s ease;
+    white-space: nowrap;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #414052;
+  }
+  
+  .sidebar ul li i {
+    height: 50px;
+    min-width: 30px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+  }
+  
+  .sidebar .links_name {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .sidebar.active .links_name {
+    opacity: 1;
+    pointer-events: none;
+  }
+  
+  .bottom {
+    margin-top: 20px;
+    position: absolute;
+    bottom: 6px;
+    width: calc(100% - 28px);
+  }
+  

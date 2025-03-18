@@ -1,0 +1,35 @@
+<!-- src/app/components/manager-users/manager-users.component.html -->
+<div class="container">
+  <div class="navbar">
+    <div class="logo">
+      <h3>PLANA</h3>
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+    </div>
+    <div class="title">
+      <h3>USERS DASHBOARD</h3>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="header-text">
+      <h4>USERS</h4>
+    </div>
+
+    <div class="users-table">
+      <table>
+        <tr>
+          <th>USERNAME</th>
+          <th>EMAIL</th>
+          <th>STATUS</th>
+
+        </tr>
+        <tr *ngFor="let user of users">
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.isActive ? 'Active' : 'Inactive' }}</td>
+          
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

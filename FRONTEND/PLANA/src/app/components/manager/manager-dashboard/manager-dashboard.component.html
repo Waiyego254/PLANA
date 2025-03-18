@@ -1,0 +1,47 @@
+<!-- src/app/components/manager-dashboard/manager-dashboard.component.html -->
+<div class="container">
+  <div class="navbar">
+    <div class="logo">
+      <h3>PLANA</h3>
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+    </div>
+    <div class="title">
+      <h3>MANAGER DASHBOARD</h3>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="header-text">
+      <h4>ANALYTICS</h4>
+    </div>
+    <div class="analysis">
+      <div class="card">
+        <h5>USERS</h5>
+        <p>{{ userCount }}</p>
+      </div>
+      <div class="card">
+        <h5>EVENTS</h5>
+        <p>{{ eventCount }}</p>
+      </div>
+      
+      <div class="card">
+        <h5>BOOKINGS</h5>
+        <p>{{ bookingCount }}</p>
+      </div>
+      
+    </div>
+
+    <div class="pcharts">
+      <div class="pchart">
+        <p-chart type="pie" [data]="userChartData"></p-chart>
+      </div>
+      <div class="pchart">
+        <p-chart type="bar" [data]="eventChartData"></p-chart>
+      </div>
+      <div class="pchart">
+        <p-chart type="bar" [data]="bookingChartData"></p-chart>
+      </div>
+
+
+    </div>
+  </div>
+</div>

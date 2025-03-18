@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="navbar">
+    <div class="logo">
+      <h3>PLANA</h3>
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+    </div>
+    <div class="title">
+      <h3>BOOKINGS DASHBOARD</h3>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="header-text">
+      <h4>BOOKINGS</h4>
+    </div>
+
+    <div class="bookings-table">
+      <table>
+        <tr>
+          <th>Event</th>
+          <th>No. of Bookings</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let booking of bookings">
+          <td>{{ booking.event_title }}</td> <!-- Using 'title' from the 'events' interface -->
+          <td>{{ booking.bookings.length }}</td> <!-- Number of bookings per event -->
+          <td><button (click)="viewBookings(booking.event_id)">View bookings</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div *ngIf="showModal" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>Bookings for Event</h2>
+      <table *ngIf="eventBookings.length > 0">
+        <tr>
+          <th>Booking id</th>
+          <th>Username</th>
+          <th>Booking Date</th>
+        </tr>
+        <tr *ngFor="let booking of eventBookings">
+          <td>{{ booking.booking_id }}</td>
+          <td>{{ booking.username }}</td>
+          <td>{{ booking.booking_date | date }}</td>
+        </tr>
+      </table>
+      <p *ngIf="eventBookings.length === 0">No bookings found for this event.</p>
+    </div>
+  </div>
+</div>

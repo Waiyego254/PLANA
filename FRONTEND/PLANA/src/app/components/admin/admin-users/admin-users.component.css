@@ -1,0 +1,132 @@
+.container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(216, 216, 216);
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.container .navbar{
+    width: 99.2%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: #36C2CE;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.navbar .logo{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.logo h3, i{
+    font-size: 30px;
+    color: white;
+}
+
+.navbar .title{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title h3{
+    font-size: 30px;
+    color: white;
+}
+
+.bottom{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background: indigo; */
+}
+
+.bottom .header-text{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: green; */
+}
+
+.header-text h4{
+    font-size: 17px;
+    color: black;
+}
+
+.users-table {
+    font-family: 'Arial', sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    width: 80%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #009879;
+    color: #ffffff;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  table tr:hover {
+    background-color: #ddd;
+  }
+  
+  tbody .btns {
+    display: flex;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  button.update-btn {
+    background-color: #36C2CE;
+  }
+  
+  button.de-activate {
+    background-color: #E74C3C;
+  }
+  
+.switchrole{
+  padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background: #009879;
+}
+  

@@ -1,0 +1,164 @@
+<div class="container">
+  <div class="navbar">
+    <div class="logo">
+      <h3>PLANA</h3>
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+    </div>
+    <div class="title">
+      <h3>EVENTS DASHBOARD</h3>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="events-text">
+      <h4>Events</h4>
+      <button id="create-event-btn" (click)="openCreateModal()">CREATE EVENT</button>
+    </div>
+
+    <table>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th>Ticket Type</th>
+        <th>Price</th>
+        <th>Total Tickets</th>
+        <th>Available Tickets</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let event of events">
+        <td>{{ event.title }}</td>
+        <td>{{ event.date | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ event.description }}</td>
+        <td>{{ event.location }}</td>
+        <td>{{ event.ticket_type }}</td>
+        <td> Ksh {{ event.price }}</td>
+        <td>{{event.total_tickets}}</td>
+        <td>{{event.available_tickets}}</td>
+        <td>{{ event.isApproved ? 'Approved' : 'Pending' }}</td>
+        <td class="btns">
+          <button class="cancel-btn" (click)="onDelete(event.event_id)">Cancel</button>
+          <button class="update-btn" (click)="openUpdateModal(event)">Update</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div id="create-event-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>{{ selectedEvent ? 'Update Event' : 'Create Event' }}</h2>
+    <form #eventForm="ngForm" (ngSubmit)="selectedEvent ? onUpdate(eventForm) : onCreate(eventForm)">
+      <label for="event-title">Event Title</label>
+      <input 
+        type="text" 
+        id="event-title" 
+        name="title" 
+        ngModel 
+        required 
+        [value]="selectedEvent?.title"
+      >
+      <div *ngIf="eventForm.controls['title']?.touched && eventForm.controls['title'].invalid" class="error">
+        Event Title is required.
+      </div>
+
+      <label for="event-description">Event Description</label>
+      <textarea 
+        id="event-description" 
+        name="description" 
+        ngModel 
+        required
+        [value]="selectedEvent?.description"
+      ></textarea>
+      <div *ngIf="eventForm.controls['description']?.touched && eventForm.controls['description'].invalid" class="error">
+        Event Description is required.
+      </div>
+
+      <label for="event-date">Event Date</label>
+      <input 
+        type="date" 
+        id="event-date" 
+        name="date" 
+        ngModel 
+        required
+        [value]="selectedEvent?.date | date: 'yyyy-MM-dd'"
+      >
+      <div *ngIf="eventForm.controls['date']?.touched && eventForm.controls['date'].invalid" class="error">
+        Event Date is required.
+      </div>
+
+      <label for="event-location">Event Location</label>
+      <input 
+        type="text" 
+        id="event-location" 
+        name="location" 
+        ngModel 
+        required
+        [value]="selectedEvent?.location"
+      >
+      <div *ngIf="eventForm.controls['location']?.touched && eventForm.controls['location'].invalid" class="error">
+        Event Location is required.
+      </div>
+
+      <label for="ticket-type">Ticket Type</label>
+      <select 
+        id="ticket-type" 
+        name="ticket_type" 
+        ngModel 
+        required
+        [value]="selectedEvent?.ticket_type"
+      >
+        <option value="single">Single</option>
+        <option value="group">Group of 3</option>
+        <option value="group">Group of 5</option>
+      </select>
+      <div *ngIf="eventForm.controls['ticket_type']?.touched && eventForm.controls['ticket_type'].invalid" class="error">
+        Ticket Type is required.
+      </div>
+
+      <label for="event-price">Event Price</label>
+      <input 
+        type="number" 
+        id="event-price" 
+        name="price" 
+        ngModel 
+        required
+        [value]="selectedEvent?.price"
+      >
+      <div *ngIf="eventForm.controls['price']?.touched && eventForm.controls['price'].invalid" class="error">
+        Event Price is required.
+      </div>
+
+      <label for="total-tickets">Total Tickets</label>
+      <input 
+        type="number" 
+        id="total-tickets" 
+        name="total_tickets" 
+        ngModel 
+        required
+        [value]="selectedEvent?.total_tickets"
+      >
+      <div *ngIf="eventForm.controls['total_tickets']?.touched && eventForm.controls['total_tickets'].invalid" class="error">
+        Ticket amount is required.
+      </div>
+
+      <label for="event-image">Event Image</label>
+      <input 
+        type="file" 
+        id="event-image" 
+        (change)="onFileSelected($event)"
+      >
+      <div *ngIf="imageError" class="error">
+        {{ imageError }}
+      </div>
+
+      <div class="modal-buttons">
+        <button type="submit" class="create-btn">{{ selectedEvent ? 'Update' : 'Create' }}</button>
+        <button type="button" class="cancel-btn" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

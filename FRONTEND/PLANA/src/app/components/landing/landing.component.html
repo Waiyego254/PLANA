@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+<div class="main">
+    <div class="container">
+        <div class="top">
+            <div class="top-left-text">
+                <h3>WELCOME TO YOUR EVENT PLANA</h3>
+                <p>Transform your ideas into memorable events</p>
+                <p class="community">Join our community today and start exploring a world of events right at your fingertips.</p>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="bottom-right-text">
+                <p>Discover, Organize and Enjoy Events Like Never Before.</p>
+                <p>Join our community today and start exploring a world of events right at your fingertips.</p>
+                <p class="started">Ready to get started?</p>
+                <div class="btns">
+                    <button class="login" routerLink="login">Sign in</button>
+                    <button class="register" routerLink="register">Sign up</button>
+                </div>
+            </div>
+        </div>
+        <section class="upcoming-events">
+          <div *ngIf="loginMessage" class="login-message">{{ loginMessage }}</div>
+            <h3>UPCOMING EVENTS</h3>
+            <div class="images-events">
+                <div class="image-description" *ngFor="let event of events">
+                    <img [src]="event.image" alt="Event image">
+                    <h4>{{ event.title }}</h4>
+                    <p>{{ event.description }}</p>
+                    <p>Ticket-type: {{ event.ticket_type }}</p>
+                    <p>Date: {{ event.date | date }}</p>
+                    <p>Price: Ksh {{ event.price }}</p>
+                    <p>Available Tickets: {{event.available_tickets}}</p>
+                    <button (click)="bookEvent(event.event_id)">Book Event</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

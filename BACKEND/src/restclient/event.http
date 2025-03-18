@@ -1,0 +1,49 @@
+###CREATE EVENT
+POST http://localhost:5500/events/createEvent
+Content-Type: application/json
+
+{
+    "title": "Mombasa Beach Resort",
+    "description": "Vacation for tourists",
+    "date": "12/01/2024",
+    "location": "Mombasa",
+    "ticket_type": "Single",
+    "price": "10000.00",
+    "image": "image1.jpg",
+    "total_tickets": "5"
+}
+
+###FETCH ALL EVENTS
+GET http://localhost:5500/events/viewAllEvents
+Content-Type: application/json
+
+###FETCH SINGLE EVENT
+GET http://localhost:5500/events/722daeb4-b0b8-4a88-ad04-2406ecc58246
+
+###UPDATE EVENT
+PUT http://localhost:5500/events/99edf5fb-2e51-46e1-b0ec-4f0f4f03321d
+Content-Type: application/json
+
+{
+    "title": "Diani Beach Conference",
+    "description": "Updated Beach Conference for the University of Eldoret",
+    "date": "08/13/2024",
+    "location": "Mombasa, Diani",
+    "ticket_type": "group",
+    "price": "3000.00",
+    "total_tickets": "15"
+}
+
+
+###APPROVE EVENT
+PUT http://localhost:5500/events/approve-event/a3d4e64c-f830-478d-96c2-981b80720c52
+Content-Type: application/json
+
+
+###DELETE EVENT
+DELETE http://localhost:5500/events/c4ea33d3-8aa2-4750-ac64-b1e8301ce215
+Content-Type: application/json
+
+###GET NUMBER OF EVENTS
+GET http://localhost:5500/events/event/numberOfEvents
+Content-Type: application/json
